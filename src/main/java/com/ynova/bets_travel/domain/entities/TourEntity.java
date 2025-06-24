@@ -1,10 +1,7 @@
 package com.ynova.bets_travel.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
@@ -16,8 +13,11 @@ import java.util.Set;
 public class TourEntity {
 
     @Id
-    private String dni;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(
             mappedBy = "tour"
             ,cascade = CascadeType.ALL
@@ -26,8 +26,10 @@ public class TourEntity {
     )
     private Set<ReservationEntity> reservations;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(
-            mappedBy = "fly"
+            mappedBy = "tour"
             ,cascade = CascadeType.ALL
             ,fetch = FetchType.EAGER
             ,orphanRemoval = true
@@ -35,6 +37,6 @@ public class TourEntity {
     private Set<TicketEntity> tickets;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "dni")
     private CustomerEntity customer;
 }

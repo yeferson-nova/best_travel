@@ -27,7 +27,7 @@ public class ReservationEntity implements Serializable {
     private LocalDate dateStart;
     private LocalDate dateEnd;
     private Integer totalDays;
-    private BigDecimal prince;
+    private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id")
@@ -38,6 +38,6 @@ public class ReservationEntity implements Serializable {
     private TourEntity tour;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",nullable = true)
+    @JoinColumn(name = "customer_id", referencedColumnName = "dni",nullable = true)
     private CustomerEntity customer;
 }

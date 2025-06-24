@@ -2,10 +2,7 @@ package com.ynova.bets_travel.domain.entities;
 
 import com.ynova.bets_travel.util.AeroLine;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -34,6 +31,8 @@ public class FlyEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private AeroLine aeroLine;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(
             mappedBy = "fly"
             ,cascade = CascadeType.ALL

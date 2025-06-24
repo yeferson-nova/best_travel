@@ -36,6 +36,6 @@ public class TicketEntity {
     private TourEntity tour;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",nullable = true)
+    @JoinColumn(name = "customer_id", referencedColumnName = "dni",nullable = true)
     private CustomerEntity customer;
 }
