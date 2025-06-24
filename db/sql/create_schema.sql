@@ -38,9 +38,9 @@ CREATE TABLE hotel
 CREATE TABLE tour
 (
     "id"             bigserial NOT NULL,
-    id_customer       varchar(20) NOT NULL,
+    customer_id       varchar(20) NOT NULL,
     CONSTRAINT pk_tour PRIMARY KEY ( "id" ),
-    CONSTRAINT fk_customer FOREIGN KEY ( id_customer ) REFERENCES customer ( dni ) ON DELETE NO ACTION
+    CONSTRAINT fk_customer FOREIGN KEY ( customer_id ) REFERENCES customer ( dni ) ON DELETE NO ACTION
 );
 
 CREATE TABLE reservation

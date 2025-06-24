@@ -19,7 +19,7 @@ public class HotelEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     @Column(length = 50)
     private String name;
     @Column(length = 50)
