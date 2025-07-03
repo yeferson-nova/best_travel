@@ -40,4 +40,7 @@ public class ReservationEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "dni",nullable = true)
     private CustomerEntity customer;
+
+
+
 }

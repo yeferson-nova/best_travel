@@ -1,5 +1,6 @@
 package com.ynova.bets_travel;
 
+import com.ynova.bets_travel.domain.entities.FlyEntity;
 import com.ynova.bets_travel.domain.repositories.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.math.BigDecimal;
+import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -36,6 +39,7 @@ public class BetsTravelApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		/*
 		var ticket = ticketRepository.findById(UUID.fromString("12345678-1234-5678-2236-567812345678"));
 		var reservation = reservationRepository.findById(UUID.fromString("12345678-1234-5678-1234-567812345678"));
 		var customer = customerRepository.findById("BBMB771012HMCRR022");
@@ -47,5 +51,13 @@ public class BetsTravelApplication implements CommandLineRunner {
 		log.info(String.valueOf(reservation));
 		log.info(String.valueOf(fly));
 		log.info(String.valueOf(hotel));
+		*/
+		//this.flyRepository.selectLessPrice(BigDecimal.valueOf(30)).forEach(System.out::println);
+		//this.flyRepository.selectBetweenPrice(BigDecimal.valueOf(10),BigDecimal.valueOf(20)).forEach(System.out::println);
+		//var fly = flyRepository.findByTicketId(UUID.fromString("32345678-1234-5678-4234-567812345678"));
+		//System.out.println(fly.get());
+
+
+
 	}
 }
